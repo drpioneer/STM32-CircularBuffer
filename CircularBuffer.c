@@ -25,7 +25,7 @@
  *                                                                      */
 
 #include <stdint.h>
-#include "CircularBuffer.h"
+#include "circular.h"
 
 /**
  * @brief  Structure describing ring buffer
@@ -90,7 +90,7 @@ void CircularBuffer_Destroy(CircularBuffer self)                                
  */
 bool CircularBuffer_VerifyIntegrity(CircularBuffer self)                        // Функция проверки целостности кольцевого буфера
 {
-	return self->values[self->capacity] == BUFFER_GUARD;                        // Сверка признака конца кольцевого буфера через указатель на последний элемент. Возврат TRUE, если буфер в порядке. 
+    return self->values[self->capacity] == BUFFER_GUARD;                        // Сверка признака конца кольцевого буфера через указатель на последний элемент. Возврат TRUE, если буфер в порядке. 
 }
 
 /**
